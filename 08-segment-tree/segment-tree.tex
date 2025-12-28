@@ -157,6 +157,13 @@ This is called the \textbf{range sum query} (RSQ) problem.
         \item Range maximum query
         \item Range *insert any function here* query
     \end{itemize}
+
+    Which functions? We just need a \textbf{monoid}:
+    \begin{itemize}
+        \item A set of elements (numbers, strings, a custom struct, ...)
+        \item An associative operation (+, min, gcd, string +, ...)
+        \item An identity element (respectively 0, $\infty$, 0, \lstinline{""}, ...)
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
