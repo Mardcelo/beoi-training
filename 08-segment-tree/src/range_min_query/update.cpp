@@ -2,19 +2,18 @@
 // x is the new value
 void update(int p, int L, int R, int i, int x) {
     if (L+1 == R) {
-        // Single element in the segment
-        st[p] = x;
+        // leaf node
+        st[p] = L;
     } else {
-        // Build both children and then combine
+        // update one child
         if (i < (L+R)/2) {
             update(2*p+1, L, (L+R)/2, i, x);
         } else {
             update(2*p+2, (L+R)/2, R, i, x);
         }
-        st[p] = st[2*p+1] + st[2*p+2];
+        // take minimum among them
+        int p1 = st[2*p+1], p2 = st[2*p+2];
+        st[p] = (A[p1] <= A[p2]) ? p1 : p2;
     }
 }
 
-// Call with:
-update(0, 0, n, i, x)
-// Careful: i is 0-indexed

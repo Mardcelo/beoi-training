@@ -19,3 +19,4 @@ Complementary notes can be found in section 2.4.3 of the book Competitive Progra
 ### Not easy
 - UVa 1232 - [SKYLINE](https://uva.onlinejudge.org/external/12/1232.pdf)
 - IOI 2014 - [Wall](http://www.ioinformatics.org/locations/ioi14/contest/day1/wall/wall.pdf)
+- IOI 2019 - [Arranging Shoes](https://ioinformatics.org/files/ioi2019problem1.pdf)

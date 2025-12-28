@@ -1,14 +1,14 @@
-void build(int p, int L, int R) {
-    if(L == R)
-        // leaf node
-        st[p] = L;
-    else {
-        // build children
-        build(2*p, L, (L+R)/2);
-        build(2*p+1, (L+R)/2+1, R);
-        // take minimum among them
-        int p1 = st[2*p], p2 = st[2*p+1];
-        st[p] = (A[p1] <= A[p2]) ? p1 : p2;
+void build(int p, int L, int R, vector<int> const& A) {
+    if (L+1 == R) {
+        // Single element in the segment
+        st[p] = A[L];
+    } else {
+        // Build both children and then combine
+        build(2*p+1, L, (L+R)/2, A);
+        build(2*p+2, (L+R)/2, R, A);
+        st[p] = st[2*p+1] + st[2*p+2];
     }
 }
 
+// Call with:
+build(0, 0, n, A);
