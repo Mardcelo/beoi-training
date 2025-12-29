@@ -8,8 +8,9 @@ void update(int p, int L, int R, int i, int j, int dx) {
         return;
     }
     // outside update range
-    if (i >= R || L >= j) return 0;
+    if (i >= R || L >= j) return;
 
+    propagate(p, L, R);
     update(2*p+1, L, (L+R)/2, i, j, dx);
     update(2*p+2, (L+R)/2, R, i, j, dx);
 
